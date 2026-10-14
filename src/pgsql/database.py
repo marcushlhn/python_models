@@ -71,3 +71,12 @@ class Database:
             returning = " RETURNING " + ", ".join(return_cols)
         sql = f"UPDATE {table} SET {sets} WHERE {where}{returning};"
         return sql, vals
+
+    def parse_dict(self, tupl : tuple, *keys):
+        if len(keys) != len(tupl):
+            raise ValueError("Nr of tuple elements does not match nr of keys")
+        return {key : val for key, val in zip(keys, tupl)}
+
+    def parse_dicts(self, tupl_list : list[tuple], *keys):
+        return [self.parse_dict(tupl, *keys) for tupl in tupl_list]
+        
