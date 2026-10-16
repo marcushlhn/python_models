@@ -1,4 +1,6 @@
+from __future__ import annotations
 from collections.abc import Iterable
+
 
 class EndOfQueueError(Exception):
     message = "reached end of queue"
