@@ -5,6 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "models"
 version = "0.2.1"
+dependencies = [
+    "psycopg2-binary",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
