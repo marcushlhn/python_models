@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "models"
-version = "0.2.2"
+version = "0.2.3"
 dependencies = [
     "psycopg2-binary",
+    "dotenv"
 ]
 
 [tool.setuptools.packages.find]
